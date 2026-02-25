@@ -72,9 +72,33 @@ ul {
     border-bottom: 1px solid #3c3f45;
     transition: 0.3s;
     display: flex;
-    align-items: center;
+    align-items: center; /* Esto centra verticalmente los elementos */
     gap: 3rem;
 }
+
+.header-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Centra el texto horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente dentro de este contenedor */
+    line-height: 1.4;
+    height: 100%; /* Asegura que ocupe toda la altura disponible */
+    padding: 0.5rem 0; /* Añade un poco de padding vertical si es necesario */
+}
+
+    .header-text h1 {
+        font-size: 2.2rem;
+        margin: 0 0 0.2rem 0; /* Ajusta el margen inferior */
+    }
+
+    .header-text h2 {
+        font-size: 1.1rem;
+        color: #b5bac1;
+        font-weight: 400;
+        margin: 0; /* Elimina cualquier margen por defecto */
+    }
+
 
     .header-with-photo:hover {
         background: #32353b;
