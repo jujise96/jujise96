@@ -684,7 +684,8 @@ skills-grid {
 .quote-box i {
     color: #f59e0b;
     font-size: 1rem;
-    margin-right: 0.2rem;
+    margin-right: 0.5rem;
+    display: inline-block;
 }
 
 .quote-box p {
@@ -694,6 +695,20 @@ skills-grid {
     line-height: 1.4;
     max-width: 100%;
     word-wrap: break-word;
+    display: inline;
+    /* Para que fluya con el icono */
+    margin: 0;
+    padding: 0;
+}
+
+.quote-box p::before {
+    content: none;
+    /* Elimina cualquier pseudo-elemento que pueda interferir */
+}
+
+.quote-box p::after {
+    content: none;
+    /* Elimina cualquier pseudo-elemento que pueda interferir */
 }
 
 /* Galería de imágenes */

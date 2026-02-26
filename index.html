@@ -10,22 +10,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>    
+<body>
     <div class="language-dropdown">
-            <button class="dropdown-btn">
-                <i class="fas fa-globe" style="margin-right: 0.5rem;"></i>
-                <span id="selected-lang">Español</span>
-                <i class="fas fa-chevron-down" style="margin-left: 0.5rem;"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#" onclick="changeLanguage('es'); return false;" class="lang-option" data-lang="es">
-                    <span class="lang-flag">🇪🇸</span> Español
-                </a>
-                <a href="#" onclick="changeLanguage('en'); return false;" class="lang-option" data-lang="en">
-                    <span class="lang-flag">🇬🇧</span> English
-                </a>
-            </div>
+        <button class="dropdown-btn">
+            <i class="fas fa-globe" style="margin-right: 0.5rem;"></i>
+            <span id="selected-lang">Español</span>
+            <i class="fas fa-chevron-down" style="margin-left: 0.5rem;"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#" onclick="changeLanguage('es'); return false;" class="lang-option" data-lang="es">
+                <span class="lang-flag">🇪🇸</span> Español
+            </a>
+            <a href="#" onclick="changeLanguage('en'); return false;" class="lang-option" data-lang="en">
+                <span class="lang-flag">🇬🇧</span> English
+            </a>
         </div>
+    </div>
     </div>
     <div class="cv-container">
         <header class="header-with-photo">
@@ -184,30 +184,47 @@ Later, working as a delivery driver, I faced the daily need to plan routes on th
                 <section>
                     <h3 data-es="FORMACIÓN" data-en="EDUCATION">FORMACIÓN</h3>
 
-                    <div class="card">
-                        <div class="card-title" data-es="GRADO INGENIERÍA INFORMÁTICA"
-                            data-en="COMPUTER ENGINEERING DEGREE">GRADO INGENIERÍA INFORMÁTICA</div>
-                        <div class="card-sub">ETSI | Universidad de Huelva</div>
-                        <div class="card-date" data-es="2019 - Actualidad" data-en="2019 - Present">2019 - Actualidad
+                    <!-- Grado Ingeniería Informática - Enlace en toda la tarjeta -->
+                    <a href="https://www.uhu.es/etsi/" target="_blank" rel="noopener noreferrer" class="card-link">
+                        <div class="card">
+                            <div class="card-title" data-es="GRADO INGENIERÍA INFORMÁTICA"
+                                data-en="COMPUTER ENGINEERING DEGREE">
+                                GRADO INGENIERÍA INFORMÁTICA
+                            </div>
+                            <div class="card-sub">ETSI | Universidad de Huelva</div>
+                            <div class="card-date" data-es="2019 - Actualidad" data-en="2019 - Present">2019 -
+                                Actualidad</div>
+                            <p class="card-text" data-es="Pendiente superación de un examen."
+                                data-en="Pending completion of one exam.">
+                                Pendiente superación de un examen.
+                            </p>
                         </div>
-                        <p class="card-text" data-es="Pendiente superación de un examen."
-                            data-en="Pending completion of one exam.">Pendiente superación de un examen.</p>
-                    </div>
+                    </a>
 
-                    <div class="card">
-                        <div class="card-title" data-es="FPGS ANIMACIONES 3D, JUEGOS Y ENTORNOS INTERACTIVOS"
-                            data-en="HIGHER EDUCATION IN 3D ANIMATIONS, GAMES AND INTERACTIVE ENVIRONMENTS">FPGS
-                            ANIMACIONES 3D, JUEGOS Y ENTORNOS INTERACTIVOS</div>
-                        <div class="card-sub">IES Ángel de Saavedra</div>
-                        <div class="card-date">2017 - 2019</div>
-                    </div>
+                    <!-- FPGS Animaciones 3D - Enlace en toda la tarjeta -->
+                    <a href="https://iesangeldesaavedra.es/formacion-profesional/" target="_blank"
+                        rel="noopener noreferrer" class="card-link">
+                        <div class="card">
+                            <div class="card-title" data-es="FPGS ANIMACIONES 3D, JUEGOS Y ENTORNOS INTERACTIVOS"
+                                data-en="HIGHER EDUCATION IN 3D ANIMATIONS, GAMES AND INTERACTIVE ENVIRONMENTS">
+                                FPGS ANIMACIONES 3D, JUEGOS Y ENTORNOS INTERACTIVOS
+                            </div>
+                            <div class="card-sub">IES Ángel de Saavedra</div>
+                            <div class="card-date">2017 - 2019</div>
+                        </div>
+                    </a>
 
-                    <div class="card">
-                        <div class="card-title" data-es="BACHILLERATO CIENTÍFICO-TECNOLÓGICO"
-                            data-en="SCIENCE AND TECHNOLOGY BACCALAUREATE">BACHILLERATO CIENTÍFICO-TECNOLÓGICO</div>
-                        <div class="card-sub">IES Manuel De Falla</div>
-                        <div class="card-date">2016 - 2017</div>
-                    </div>
+                    <!-- Bachillerato - Enlace en toda la tarjeta -->
+                    <a href="https://iesmanueldefalla.es/" target="_blank" rel="noopener noreferrer" class="card-link">
+                        <div class="card">
+                            <div class="card-title" data-es="BACHILLERATO CIENTÍFICO-TECNOLÓGICO"
+                                data-en="SCIENCE AND TECHNOLOGY BACCALAUREATE">
+                                BACHILLERATO CIENTÍFICO-TECNOLÓGICO
+                            </div>
+                            <div class="card-sub">IES Manuel De Falla</div>
+                            <div class="card-date">2016 - 2017</div>
+                        </div>
+                    </a>
                 </section>
             </div>
         </div>
@@ -216,7 +233,7 @@ Later, working as a delivery driver, I faced the daily need to plan routes on th
             actualizado - Juan Jiménez Serrano</footer>
     </div>
 
-    <script src="scripts.js"></script>
+
 </body>
 
 </html>

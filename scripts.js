@@ -43,15 +43,15 @@ const skillMap = {
 // Función para crear los puntos de navegación
 function createSkillDots() {
     if (!skillsNav) return;
-    
+
     skillNames.forEach((name, index) => {
         const dot = document.createElement('div');
         dot.className = `skill-dot ${index === 0 ? 'active' : ''}`;
-        
+
         // Guardar los nombres completos como atributos de datos
         dot.setAttribute('data-name-es', name);
         dot.setAttribute('data-name-en', getEnglishSkillName(index));
-        
+
         let displayName = name;
         if (name === 'Resolución conflictos') displayName = 'Conflictos';
         else if (name === 'Orientación servicio') displayName = 'Servicio';
@@ -70,7 +70,7 @@ function createSkillDots() {
 function getEnglishSkillName(index) {
     const englishNames = [
         'Teamwork',
-        'Resourceful', 
+        'Resourceful',
         'Hardworking',
         'Sociable',
         'Complaint and conflict resolution',
@@ -85,10 +85,10 @@ function getEnglishSkillName(index) {
 // Función para actualizar los puntos de navegación según el idioma
 function updateSkillDotsLanguage(lang) {
     const dots = document.querySelectorAll('.skill-dot');
-    const names = lang === 'es' ? 
+    const names = lang === 'es' ?
         ['Trabajo', 'Resolutivo', 'Trabajador', 'Sociable', 'Conflictos', 'Servicio', 'Trato', 'Movilidad', 'Inglés'] :
         ['Teamwork', 'Resourceful', 'Hardworking', 'Sociable', 'Conflict', 'Service', 'Manner', 'Mobility', 'English'];
-    
+
     dots.forEach((dot, index) => {
         if (index < names.length) {
             dot.textContent = names[index];
@@ -100,7 +100,7 @@ function updateSkillDotsLanguage(lang) {
 // Inicialización cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM cargado'); // Para depuración
-    
+
     // Inicializar variables SOLO si existen en la página actual
     slides = document.querySelectorAll('.skill-slide');
     totalSlides = slides.length;
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Solo inicializar el carrusel si estamos en habilidades.html
     if (slides.length > 0 && carousel) {
         console.log('Inicializando carrusel con', totalSlides, 'slides');
-        
+
         // Crear navegación por puntos
         createSkillDots();
 
@@ -134,14 +134,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 100);
             }
         }
-        
+
         // Inicializar eventos de arrastre
         initDragEvents();
-        
+
         // Actualizar posición inicial
         updateCarousel();
     }
-    
+
     // Inicializar sistema de idiomas (siempre)
     initLanguageSystem();
 });
@@ -149,16 +149,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // Inicializar eventos de arrastre
 function initDragEvents() {
     if (!carousel) return;
-    
+
     // Prevenir el comportamiento por defecto del navegador al arrastrar imágenes
     carousel.addEventListener('dragstart', (e) => e.preventDefault());
-    
+
     // Eventos para ratón
     carousel.addEventListener('mousedown', dragStart);
     carousel.addEventListener('mouseup', dragEnd);
     carousel.addEventListener('mouseleave', dragEnd);
     carousel.addEventListener('mousemove', drag);
-    
+
     // Eventos para táctil (móvil/tablet)
     carousel.addEventListener('touchstart', dragStart);
     carousel.addEventListener('touchend', dragEnd);
@@ -170,24 +170,24 @@ function initDragEvents() {
 function dragStart(e) {
     if (!carousel) return;
     e.preventDefault();
-    
+
     // Obtener posición inicial
     if (e.type === 'touchstart') {
         startPos = e.touches[0].clientX;
     } else {
         startPos = e.clientX;
     }
-    
+
     isDragging = true;
-    
+
     // Detener animación actual
     if (animationID) {
         cancelAnimationFrame(animationID);
     }
-    
+
     // Guardar la posición actual
     prevTranslate = currentTranslate;
-    
+
     // Añadir clase para cambiar cursor
     carousel.style.cursor = 'grabbing';
     carousel.classList.add('dragging');
@@ -196,33 +196,33 @@ function dragStart(e) {
 // Durante el arrastre
 function drag(e) {
     if (!isDragging || !carousel) return;
-    
+
     e.preventDefault();
-    
+
     let currentPosition;
     if (e.type === 'touchmove') {
         currentPosition = e.touches[0].clientX;
     } else {
         currentPosition = e.clientX;
     }
-    
+
     // Calcular distancia arrastrada
     const diff = currentPosition - startPos;
-    
+
     // Calcular nuevo desplazamiento (con límites)
     const slideWidth = carousel.offsetWidth;
     const maxTranslate = 0;
     const minTranslate = -(totalSlides - 1) * slideWidth;
-    
+
     currentTranslate = prevTranslate + diff;
-    
+
     // Aplicar límites para no arrastrar más allá del primer o último slide
     if (currentTranslate > maxTranslate) {
         currentTranslate = maxTranslate - (currentTranslate - maxTranslate) * 0.2; // Efecto elástico
     } else if (currentTranslate < minTranslate) {
         currentTranslate = minTranslate + (minTranslate - currentTranslate) * 0.2; // Efecto elástico
     }
-    
+
     // Aplicar transformación
     carousel.style.transform = `translateX(${currentTranslate}px)`;
     carousel.style.transition = 'none';
@@ -231,18 +231,18 @@ function drag(e) {
 // Fin del arrastre
 function dragEnd(e) {
     if (!isDragging || !carousel) return;
-    
+
     isDragging = false;
     carousel.style.cursor = 'grab';
     carousel.classList.remove('dragging');
-    
+
     // Calcular a qué slide debemos ir
     const slideWidth = carousel.offsetWidth;
     const threshold = slideWidth * 0.2; // Si arrastra más del 20%, cambia de slide
-    
+
     // Determinar el slide más cercano
     const movedBy = currentTranslate - prevTranslate;
-    
+
     if (Math.abs(movedBy) > threshold) {
         // Cambiar de slide en la dirección del arrastre
         if (movedBy < 0) {
@@ -251,7 +251,7 @@ function dragEnd(e) {
             currentSlide = Math.max(currentSlide - 1, 0);
         }
     }
-    
+
     // Ir al slide correspondiente
     goToSlide(currentSlide);
 }
@@ -259,7 +259,7 @@ function dragEnd(e) {
 // Función para mover el carrusel
 function moveSlide(direction) {
     if (!slides.length) return;
-    
+
     slides.forEach(slide => slide.classList.remove('selected'));
 
     currentSlide += direction;
@@ -281,7 +281,7 @@ function moveSlide(direction) {
 // Función para ir a un slide específico
 function goToSlide(index) {
     if (!slides.length) return;
-    
+
     slides.forEach(slide => slide.classList.remove('selected'));
 
     currentSlide = index;
@@ -296,11 +296,11 @@ function goToSlide(index) {
 // Actualizar carrusel y elementos de navegación
 function updateCarousel() {
     if (!carousel || !slides.length) return;
-    
+
     // Calcular la posición exacta
     const slideWidth = carousel.offsetWidth;
     currentTranslate = -currentSlide * slideWidth;
-    
+
     // Aplicar transformación con transición suave
     carousel.style.transform = `translateX(${currentTranslate}px)`;
     carousel.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
@@ -371,7 +371,7 @@ window.goToSlide = goToSlide;
 // Cambiar idioma
 function changeLanguage(lang) {
     console.log('Cambiando idioma a:', lang); // Para depuración
-    
+
     // Actualizar el texto del botón
     const selectedSpan = document.getElementById('selected-lang');
     if (selectedSpan) {
@@ -396,7 +396,7 @@ function changeLanguage(lang) {
 
     // Actualizar puntos de navegación
     updateSkillDotsLanguage(lang);
-    
+
     // Actualizar número de slide
     if (slideNumber && slides.length > 0) {
         const textHabilidad = lang === 'es' ? 'Habilidad' : 'Skill';
@@ -406,7 +406,7 @@ function changeLanguage(lang) {
 
     // Guardar preferencia
     localStorage.setItem('preferred-language', lang);
-    
+
     // Cerrar el desplegable después de seleccionar
     const dropdown = document.querySelector('.language-dropdown');
     if (dropdown) dropdown.classList.remove('active');
@@ -415,37 +415,37 @@ function changeLanguage(lang) {
 // Inicializar sistema de idiomas
 function initLanguageSystem() {
     console.log('Inicializando sistema de idiomas'); // Para depuración
-    
+
     const savedLang = localStorage.getItem('preferred-language') || 'es';
-    
+
     // Event listener para el botón del desplegable
     const dropdownBtn = document.querySelector('.dropdown-btn');
     if (dropdownBtn) {
         // Eliminar listeners anteriores para evitar duplicados
         dropdownBtn.replaceWith(dropdownBtn.cloneNode(true));
         const newDropdownBtn = document.querySelector('.dropdown-btn');
-        
-        newDropdownBtn.addEventListener('click', function(e) {
+
+        newDropdownBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             document.querySelector('.language-dropdown').classList.toggle('active');
         });
     }
-    
+
     // Cerrar al hacer clic fuera
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         const dropdown = document.querySelector('.language-dropdown');
         if (dropdown && !dropdown.contains(event.target)) {
             dropdown.classList.remove('active');
         }
     });
-    
+
     // Prevenir que los clics en las opciones cierren sin cambiar idioma
     document.querySelectorAll('.lang-option').forEach(option => {
-        option.addEventListener('click', function(e) {
+        option.addEventListener('click', function (e) {
             e.stopPropagation();
         });
     });
-    
+
     // Aplicar idioma guardado
     setTimeout(() => {
         changeLanguage(savedLang);
