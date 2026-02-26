@@ -414,40 +414,28 @@ function changeLanguage(lang) {
 
 // Inicializar sistema de idiomas
 function initLanguageSystem() {
-    console.log('Inicializando sistema de idiomas'); // Para depuración
+    console.log('Inicializando sistema de idiomas');
 
     const savedLang = localStorage.getItem('preferred-language') || 'es';
 
     // Event listener para el botón del desplegable
     const dropdownBtn = document.querySelector('.dropdown-btn');
     if (dropdownBtn) {
-        // Eliminar listeners anteriores para evitar duplicados
-        dropdownBtn.replaceWith(dropdownBtn.cloneNode(true));
-        const newDropdownBtn = document.querySelector('.dropdown-btn');
-
-        newDropdownBtn.addEventListener('click', function (e) {
+        dropdownBtn.onclick = function (e) {
             e.stopPropagation();
             document.querySelector('.language-dropdown').classList.toggle('active');
-        });
+        };
     }
 
     // Cerrar al hacer clic fuera
-    document.addEventListener('click', function (event) {
+    document.onclick = function (event) {
         const dropdown = document.querySelector('.language-dropdown');
         if (dropdown && !dropdown.contains(event.target)) {
             dropdown.classList.remove('active');
         }
-    });
-
-    // Prevenir que los clics en las opciones cierren sin cambiar idioma
-    document.querySelectorAll('.lang-option').forEach(option => {
-        option.addEventListener('click', function (e) {
-            e.stopPropagation();
-        });
-    });
+    };
 
     // Aplicar idioma guardado
-    setTimeout(() => {
-        changeLanguage(savedLang);
-    }, 200);
+    changeLanguage(savedLang);
 }
+
