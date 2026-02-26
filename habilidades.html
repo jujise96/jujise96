@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Jiménez - Habilidades & Hobbys</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="language-dropdown">
+        <button class="dropdown-btn">
+            <i class="fas fa-globe" style="margin-right: 0.5rem;"></i>
+            <span id="selected-lang">Español</span>
+            <i class="fas fa-chevron-down" style="margin-left: 0.5rem;"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#" onclick="changeLanguage('es'); return false;" class="lang-option" data-lang="es">
+                <span class="lang-flag">🇪🇸</span> Español
+            </a>
+            <a href="#" onclick="changeLanguage('en'); return false;" class="lang-option" data-lang="en">
+                <span class="lang-flag">🇬🇧</span> English
+            </a>
+        </div>
+    </div>
+
+    <div class="skills-showcase">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> <span data-es="Volver al CV" data-en="Back to CV">Volver al CV</span>
+        </a>
+
+        <h1 class="skills-title" data-es="Mis habilidades & aficiones" data-en="My skills & hobbies">Mis habilidades & aficiones</h1>
+        <p class="skills-subtitle" data-es="Cada habilidad profesional se nutre de mis experiencias. Descubre cómo mis vivencias refuerzan lo que puedo aportar en el trabajo." 
+           data-en="Each professional skill is nourished by my experiences. Discover how my experiences reinforce what I can bring to the job.">
+            Cada habilidad profesional se nutre de mis experiencias. Descubre cómo mis vivencias refuerzan lo que puedo aportar en el trabajo.
+        </p>
+
+        <!-- Navegación por puntos (las habilidades) -->
+        <div class="skills-nav" id="skillsNav"></div>
+
+        <!-- Carrusel principal -->
+        <div class="carousel-container">
+            <div class="carousel" id="skillCarousel">
+                <!-- SLIDE 1: Trabajo en equipo - Airsoft -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Habilidad profesional" data-en="Professional skill">Habilidad profesional</span>
+                            <h2 class="hobby-name" data-es="Trabajo en equipo" data-en="Teamwork">Trabajo en equipo</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-heart" style="color: #f59e0b;"></i> <strong data-es="Afición:" data-en="Hobby:">Afición:</strong> Airsoft</p>
+                                <p data-es="El airsoft no es solo un deporte, es una escuela de coordinación. En cada partida, la comunicación constante y la confianza en mis compañeros son la diferencia entre ganar o perder. He aprendido a cubrir las espaldas del equipo, a seguir un plan táctico y a adaptarme cuando las cosas no salen como esperábamos. Cada misión requiere sincronización perfecta, igual que en cualquier proyecto laboral."
+                                   data-en="Airsoft is not just a sport, it's a school of coordination. In each game, constant communication and trust in my teammates are the difference between winning or losing. I've learned to watch the team's back, follow a tactical plan, and adapt when things don't go as expected. Each mission requires perfect synchronization, just like in any work project.">
+                                    El airsoft no es solo un deporte, es una escuela de coordinación. En cada partida, la comunicación constante y la confianza en mis compañeros son la diferencia entre ganar o perder. He aprendido a cubrir las espaldas del equipo, a seguir un plan táctico y a adaptarme cuando las cosas no salen como esperábamos. Cada misión requiere sincronización perfecta, igual que en cualquier proyecto laboral.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="El mejor jugador no es el que más elimina, sino el que mejor se sincroniza con su equipo"
+                                   data-en="The best player is not the one who eliminates the most, but the one who best synchronizes with their team">
+                                    "El mejor jugador no es el que más elimina, sino el que mejor sincroniza con su equipo"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/trabajoenequipo.jpg" alt="Airsoft - Trabajo en equipo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: Resolutivo - Airsoft, Createc3D, Repartidor -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Habilidad profesional" data-en="Professional skill">Habilidad profesional</span>
+                            <h2 class="hobby-name" data-es="Resolutivo" data-en="Resourceful">Resolutivo</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-briefcase" style="color: #f59e0b;"></i> <strong data-es="Experiencias:" data-en="Experiences:">Experiencias:</strong> Airsoft, Createc3D, Repartidor</p>
+                                <p data-es="En el airsoft, cada partida presenta situaciones imprevistas que requieren decisiones rápidas. En Createc3D, cada encargo de modelado venía con sus propios desafíos técnicos que había que resolver sobre la marcha. Como repartidor, los cortes de tráfico, las direcciones incorrectas y los plazos ajustados me obligaban a encontrar rutas alternativas en segundos. Esta combinación me ha entrenado para mantener la calma y encontrar soluciones bajo presión."
+                                   data-en="In airsoft, each game presents unforeseen situations that require quick decisions. At Createc3D, each modeling commission came with its own technical challenges that had to be solved on the fly. As a delivery driver, traffic jams, incorrect addresses, and tight deadlines forced me to find alternative routes in seconds. This combination has trained me to stay calm and find solutions under pressure.">
+                                    En el airsoft, cada partida presenta situaciones imprevistas que requieren decisiones rápidas. En Createc3D, cada encargo de modelado venía con sus propios desafíos técnicos que había que resolver sobre la marcha. Como repartidor, los cortes de tráfico, las direcciones incorrectas y los plazos ajustados me obligaban a encontrar rutas alternativas en segundos. Esta combinación me ha entrenado para mantener la calma y encontrar soluciones bajo presión.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="Los problemas son solo oportunidades disfrazadas de obstáculos"
+                                   data-en="Problems are just opportunities disguised as obstacles">
+                                    "Los problemas son solo oportunidades disfrazadas de obstáculos"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/resolutivo.jpg" alt="Resolutivo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: Trabajador - Repartidor y Createc3D -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Habilidad profesional" data-en="Professional skill">Habilidad profesional</span>
+                            <h2 class="hobby-name" data-es="Trabajador" data-en="Hardworking">Trabajador</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-briefcase" style="color: #f59e0b;"></i> <strong data-es="Experiencias:" data-en="Experiences:">Experiencias:</strong> Repartidor, Createc3D</p>
+                                <p data-es="En mis prácticas de Createc3D, aprendí que el modelado 3D requiere paciencia y dedicación: horas de trabajo minucioso para que cada pieza salga perfecta. Como repartidor en temporadas altas, las jornadas eran largas y exigentes, con cientos de paquetes que entregar contra reloj. Ambas experiencias me enseñaron que el esfuerzo constante y la perseverancia son la base para conseguir cualquier objetivo."
+                                   data-en="In my internships at Createc3D, I learned that 3D modeling requires patience and dedication: hours of meticulous work so that each piece comes out perfect. As a delivery driver during peak seasons, the shifts were long and demanding, with hundreds of packages to deliver against the clock. Both experiences taught me that constant effort and perseverance are the foundation for achieving any goal.">
+                                    En mis prácticas de Createc3D, aprendí que el modelado 3D requiere paciencia y dedicación: horas de trabajo minucioso para que cada pieza salga perfecta. Como repartidor en temporadas altas, las jornadas eran largas y exigentes, con cientos de paquetes que entregar contra reloj. Ambas experiencias me enseñaron que el esfuerzo constante y la perseverancia son la base para conseguir cualquier objetivo.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="El éxito no llega por casualidad, llega por trabajo constante"
+                                   data-en="Success doesn't come by chance, it comes through constant work">
+                                    "El éxito no llega por casualidad, llega por trabajo constante"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/trabajador.jpg" alt="Trabajador">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4: Sociable - Airsoft, Repartidor, Conocer gente -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Habilidad profesional" data-en="Professional skill">Habilidad profesional</span>
+                            <h2 class="hobby-name" data-es="Sociable" data-en="Sociable">Sociable</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-heart" style="color: #f59e0b;"></i> <strong data-es="Afición:" data-en="Hobby:">Afición:</strong> Airsoft, Repartidor, Conocer gente</p>
+                                <p data-es="El airsoft me ha permitido conocer a personas de diferentes ámbitos y edades, todas unidas por una pasión común. Como repartidor, cada día interactuaba con decenas de clientes diferentes, aprendiendo a adaptar mi comunicación a cada persona. Pero sobre todo, siempre he disfrutado conociendo gente nueva, escuchando sus historias y compartiendo experiencias. Para mí, cada persona es una oportunidad de aprender algo nuevo."
+                                   data-en="Airsoft has allowed me to meet people from different backgrounds and ages, all united by a common passion. As a delivery driver, I interacted with dozens of different clients every day, learning to adapt my communication to each person. But above all, I have always enjoyed meeting new people, listening to their stories, and sharing experiences. For me, each person is an opportunity to learn something new.">
+                                    El airsoft me ha permitido conocer a personas de diferentes ámbitos y edades, todas unidas por una pasión común. Como repartidor, cada día interactuaba con decenas de clientes diferentes, aprendiendo a adaptar mi comunicación a cada persona. Pero sobre todo, siempre he disfrutado conociendo gente nueva, escuchando sus historias y compartiendo experiencias. Para mí, cada persona es una oportunidad de aprender algo nuevo.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="Cada persona que conoces sabe algo que tú ignoras"
+                                   data-en="Every person you meet knows something you don't">
+                                    "Cada persona que conoces sabe algo que tú ignoras"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/sociable.jpg" alt="Sociable">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 5: Resolución de quejas y conflictos - Repartidor -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Habilidad profesional" data-en="Professional skill">Habilidad profesional</span>
+                            <h2 class="hobby-name" data-es="Resolución de quejas y conflictos" data-en="Complaint and conflict resolution">Resolución de quejas y conflictos</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-briefcase" style="color: #f59e0b;"></i> <strong data-es="Experiencia:" data-en="Experience:">Experiencia:</strong> Repartidor</p>
+                                <p data-es="Como repartidor, no solo entregaba paquetes, también era la cara visible de la empresa. Cuando un paquete llegaba tarde, dañado o simplemente el cliente estaba insatisfecho, era mi responsabilidad escuchar, empatizar y buscar una solución. Aprendí que la mayoría de los conflictos se resuelven con escucha activa, honestidad y voluntad de ayudar. Mantener la calma cuando alguien está enfadado es una habilidad que he desarrollado y que aplico en cualquier ámbito."
+                                   data-en="As a delivery driver, I didn't just deliver packages, I was also the face of the company. When a package arrived late, damaged, or the customer was simply dissatisfied, it was my responsibility to listen, empathize, and find a solution. I learned that most conflicts are resolved with active listening, honesty, and willingness to help. Staying calm when someone is angry is a skill I have developed and apply in any area.">
+                                    Como repartidor, no solo entregaba paquetes, también era la cara visible de la empresa. Cuando un paquete llegaba tarde, dañado o simplemente el cliente estaba insatisfecho, era mi responsabilidad escuchar, empatizar y buscar una solución. Aprendí que la mayoría de los conflictos se resuelven con escucha activa, honestidad y voluntad de ayudar. Mantener la calma cuando alguien está enfadado es una habilidad que he desarrollado y que aplico en cualquier ámbito.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="Detrás de cada queja hay una oportunidad para mejorar"
+                                   data-en="Behind every complaint there is an opportunity to improve">
+                                    "Detrás de cada queja hay una oportunidad para mejorar"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/conflictos.jpg" alt="Resolución de conflictos">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 6: Orientación al servicio - Repartidor, Createc3D -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Habilidad profesional" data-en="Professional skill">Habilidad profesional</span>
+                            <h2 class="hobby-name" data-es="Orientación al servicio" data-en="Customer service orientation">Orientación al servicio</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-briefcase" style="color: #f59e0b;"></i> <strong data-es="Experiencias:" data-en="Experiences:">Experiencias:</strong> Repartidor, Createc3D</p>
+                                <p data-es="En Createc3D, cada pieza que modelaba era para un cliente con una necesidad concreta. Aprendí a escuchar atentamente sus requerimientos y a traducirlos en modelos 3D que cumplieran sus expectativas. Como repartidor, el cliente era el centro de todo: había que asegurarse de que el paquete llegara en perfecto estado y en el plazo prometido. Ambas experiencias me enseñaron que el verdadero servicio consiste en anticiparse a las necesidades del cliente."
+                                   data-en="At Createc3D, each piece I modeled was for a client with a specific need. I learned to listen carefully to their requirements and translate them into 3D models that met their expectations. As a delivery driver, the customer was the center of everything: you had to make sure the package arrived in perfect condition and within the promised timeframe. Both experiences taught me that true service consists of anticipating the client's needs.">
+                                    En Createc3D, cada pieza que modelaba era para un cliente con una necesidad concreta. Aprendí a escuchar atentamente sus requerimientos y a traducirlos en modelos 3D que cumplieran sus expectativas. Como repartidor, el cliente era el centro de todo: había que asegurarse de que el paquete llegara en perfecto estado y en el plazo prometido. Ambas experiencias me enseñaron que el verdadero servicio consiste en anticiparse a las necesidades del cliente.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="El mejor servicio es el que supera las expectativas del cliente"
+                                   data-en="The best service is one that exceeds the client's expectations">
+                                    "El mejor servicio es el que supera las expectativas del cliente"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/servicio.jpg" alt="Orientación al servicio">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 7: Trato cordial y profesional - Createc3D, Repartidor -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Habilidad profesional" data-en="Professional skill">Habilidad profesional</span>
+                            <h2 class="hobby-name" data-es="Trato cordial y profesional" data-en="Friendly and professional manner">Trato cordial y profesional</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-briefcase" style="color: #f59e0b;"></i> <strong data-es="Experiencias:" data-en="Experiences:">Experiencias:</strong> Createc3D, Repartidor</p>
+                                <p data-es="En Createc3D, el trato con los clientes requería un equilibrio entre cercanía y profesionalidad: entender sus necesidades sin perder el rigor técnico. Como repartidor, cada entrega era una oportunidad para dejar una buena impresión, con una sonrisa y trato amable, incluso en los días más difíciles. He aprendido que la cortesía no está reñida con la eficiencia, y que un trato cordial abre muchas puertas."
+                                   data-en="At Createc3D, dealing with clients required a balance between closeness and professionalism: understanding their needs without losing technical rigor. As a delivery driver, each delivery was an opportunity to leave a good impression, with a smile and friendly treatment, even on the most difficult days. I have learned that courtesy is not at odds with efficiency, and that a cordial manner opens many doors.">
+                                    En Createc3D, el trato con los clientes requería un equilibrio entre cercanía y profesionalidad: entender sus necesidades sin perder el rigor técnico. Como repartidor, cada entrega era una oportunidad para dejar una buena impresión, con una sonrisa y trato amable, incluso en los días más difíciles. He aprendido que la cortesía no está reñida con la eficiencia, y que un trato cordial abre muchas puertas.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="La amabilidad es el lenguaje que todos entienden"
+                                   data-en="Kindness is the language everyone understands">
+                                    "La amabilidad es el lenguaje que todos entienden"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/trato.jpg" alt="Trato cordial">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 8: Movilidad geográfica - Disponibilidad y deseo -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Habilidad profesional" data-en="Professional skill">Habilidad profesional</span>
+                            <h2 class="hobby-name" data-es="Movilidad geográfica" data-en="Geographic mobility">Movilidad geográfica</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-globe" style="color: #f59e0b;"></i> <strong data-es="Actitud:" data-en="Attitude:">Actitud:</strong> Disponibilidad y deseo</p>
+                                <p data-es="No solo estoy disponible para desplazarme, sino que tengo un verdadero deseo de hacerlo. Creo que salir de la zona de confort es la mejor manera de crecer, tanto personal como profesionalmente. Conocer nuevas culturas, adaptarse a diferentes entornos y aprender de otras formas de trabajar son experiencias que busco activamente. Estoy preparado para integrarme en cualquier equipo, en cualquier lugar, y aportar mi granito de arena."
+                                   data-en="I am not only available to relocate, but I have a real desire to do so. I believe that leaving the comfort zone is the best way to grow, both personally and professionally. Getting to know new cultures, adapting to different environments, and learning from other ways of working are experiences I actively seek. I am prepared to integrate into any team, anywhere, and contribute my grain of sand.">
+                                    No solo estoy disponible para desplazarme, sino que tengo un verdadero deseo de hacerlo. Creo que salir de la zona de confort es la mejor manera de crecer, tanto personal como profesionalmente. Conocer nuevas culturas, adaptarse a diferentes entornos y aprender de otras formas de trabajar son experiencias que busco activamente. Estoy preparado para integrarme en cualquier equipo, en cualquier lugar, y aportar mi granito de arena.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="La zona de confort es un lugar maravilloso, pero nunca crece nada allí"
+                                   data-en="The comfort zone is a wonderful place, but nothing ever grows there">
+                                    "La zona de confort es un lugar maravilloso, pero nunca crece nada allí"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/movilidad.jpg" alt="Movilidad geográfica">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 9: Inglés - Comunicación en videojuegos online -->
+                <div class="skill-slide">
+                    <div class="slide-content">
+                        <div class="slide-info">
+                            <span class="skill-title" data-es="Idioma" data-en="Language">Idioma</span>
+                            <h2 class="hobby-name" data-es="Inglés" data-en="English">Inglés</h2>
+                            <div class="connection-text">
+                                <p class="hobby-tag"><i class="fas fa-gamepad" style="color: #f59e0b;"></i> <strong data-es="Afición:" data-en="Hobby:">Afición:</strong> Videojuegos online</p>
+                                <p data-es="En los videojuegos online, el inglés es la lengua franca. He pasado decenas de horas coordinándome con compañeros de todo el mundo: desde planificar estrategias en shooters tácticos hasta negociar alianzas en juegos de rol multijugador. Esta experiencia me ha obligado a desenvolverme en inglés en tiempo real, entendiendo y haciéndome entender en situaciones de alta presión donde la comunicación clara marca la diferencia entre ganar o perder. He aprendido vocabulario técnico, coloquial y, sobre todo, a perder el miedo a hablar y expresarme en inglés."
+                                   data-en="In online video games, English is the lingua franca. I have spent dozens of hours coordinating with teammates from all over the world: from planning strategies in tactical shooters to negotiating alliances in multiplayer role-playing games. This experience has forced me to function in English in real-time, understanding and making myself understood in high-pressure situations where clear communication makes the difference between winning or losing. I have learned technical and colloquial vocabulary and, above all, to lose the fear of speaking and expressing myself in English.">
+                                    En los videojuegos online, el inglés es la lengua franca. He pasado decenas de horas coordinándome con compañeros de todo el mundo: desde planificar estrategias en shooters tácticos hasta negociar alianzas en juegos de rol multijugador. Esta experiencia me ha obligado a desenvolverme en inglés en tiempo real, entendiendo y haciéndome entender en situaciones de alta presión donde la comunicación clara marca la diferencia entre ganar o perder. He aprendido vocabulario técnico, coloquial y, sobre todo, a perder el miedo a hablar y expresarme en inglés.
+                                </p>
+                            </div>
+                            <div class="quote-box">
+                                <i class="fas fa-quote-left"></i>
+                                <p data-es="El inglés no lo aprendí en un libro, lo aprendí coordinando ataques con jugadores de todo el mundo"
+                                   data-en="I didn't learn English from a book, I learned it coordinating attacks with players from all over the world">
+                                    "El inglés no lo aprendí en un libro, lo aprendí coordinando ataques con jugadores de todo el mundo"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide-gallery">
+                            <div class="gallery-main">
+                                <img src="Recursos/ingles.jpg" alt="Inglés - Videojuegos online">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <div class="nav-arrow prev" onclick="moveSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="nav-arrow next" onclick="moveSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Indicadores de progreso -->
+        <div class="slide-indicators" id="slideIndicators"></div>
+
+        <div class="slide-number" id="slideNumber">
+            <span data-es="Habilidad" data-en="Skill">Habilidad</span> 1 <span data-es="de" data-en="of">de</span> 9
+        </div>
+
+        <div class="skills-footer">
+            <i class="fas fa-arrow-left"></i>
+            <span data-es="Navega con las flechas para descubrir más" data-en="Navigate with the arrows to discover more">Navega con las flechas para descubrir más</span>
+            <i class="fas fa-arrow-right"></i>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
