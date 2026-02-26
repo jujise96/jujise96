@@ -677,28 +677,36 @@ skills-grid {
     padding: 1rem 1.2rem;
     margin-top: 0.5rem;
     border-radius: 6px;
-    max-width: 100%;
-    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
 .quote-box i {
     color: #f59e0b;
-    font-size: 1rem;
-    margin-right: 0.5rem;
-    display: inline-block;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.quote-box i.fa-quote-left {
+    align-self: flex-start;
+    margin-top: 0.2rem;
+}
+
+.quote-box i.fa-quote-right {
+    align-self: flex-end;
+    margin-bottom: 0.2rem;
 }
 
 .quote-box p {
     color: white;
     font-style: italic;
     font-size: 0.9rem;
-    line-height: 1.4;
-    max-width: 100%;
-    word-wrap: break-word;
-    display: inline;
-    /* Para que fluya con el icono */
+    line-height: 1.5;
     margin: 0;
     padding: 0;
+    flex: 1;
+    text-align: center;
 }
 
 .quote-box p::before {
