@@ -501,14 +501,13 @@ skills-grid {
 }
 
     .skills-category h4 {
-        color: #f59e0b;
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        padding-left: 0.5rem;
-        border-left: 3px solid #f59e0b;
+        color: #f59e0b !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 1rem !important;
+        padding-left: 0.5rem !important;
+        border-left: 3px solid #f59e0b !important;
     }
 
-    /* Reutilizamos .skills-grid y .skill-tag que ya existen */
     .skills-category .skills-grid {
         margin-left: 0.5rem;
     }
