@@ -99,7 +99,17 @@
   <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
 </p>
 
-<br><br>
+<br>
 
+<br>
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+## <h2 style="margin-left: 30px;">📊 GitHub Analytics
+<br>
+<p align="center">
+  <img width="50%" src="https://github-stats-extended.vercel.app/api/top-langs/?username=jujise96&layout=donut&theme=tokyonight&hide_border=true&langs_count=8" />
+</p>
+<p align="center">  
+  <img width="50%" src="https://github-readme-streak-stats.herokuapp.com/?user=jujise96&theme=tokyonight&hide_border=true" />
+</p>
+
+<br>
